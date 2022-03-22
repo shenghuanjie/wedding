@@ -79,7 +79,7 @@
 				<div class="col-xs-10 text-right menu-1">
 					<ul>
 						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">Story</a></li>
+						<!-- <li><a href="about.html">Story</a></li>
 						<li class="has-dropdown">
 							<a href="services.html">Services</a>
 							<ul class="dropdown">
@@ -88,8 +88,9 @@
 								<li><a href="#">Branding</a></li>
 								<li><a href="#">API</a></li>
 							</ul>
-						</li>
-						<li class="has-dropdown">
+						</li> -->
+						<li><a href="gallery.html">Gallery</a></li>
+						<!-- <li class="has-dropdown">
 							<a href="gallery.html">Gallery</a>
 							<ul class="dropdown">
 								<li><a href="#">HTML5</a></li>
@@ -97,7 +98,7 @@
 								<li><a href="#">Sass</a></li>
 								<li><a href="#">jQuery</a></li>
 							</ul>
-						</li>
+						</li> -->
 						<li class="active"><a href="contact.html">Contact</a></li>
 					</ul>
 				</div>
@@ -106,15 +107,17 @@
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/img_bg_1.jpg);">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/header_image.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="fh5co-container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Contact Us</h1>
-							<h2>Free HTML5 templates Made by <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a></h2>
+							<h1>Huanjie &amp; Htet</h1>
+							<h2>We Are Getting Married</h2>
+							<div class="simply-countdown simply-countdown-one"></div>
+							<p><a href="#" class="btn btn-default btn-sm">Save the date</a></p>
 						</div>
 					</div>
 				</div>
@@ -134,21 +137,21 @@
 			<div class="couple-wrap animate-box">
 				<div class="couple-half">
 					<div class="groom">
-						<img src="images/groom.jpg" alt="groom" class="img-responsive">
+						<img src="images/man_potrait.jpg" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-groom">
-						<h3>Joefrey Mahusay</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+						<h3>Huanjie Sheng</h3>
+						<p>Husband</p>
 					</div>
 				</div>
 				<p class="heart text-center"><i class="icon-heart2"></i></p>
 				<div class="couple-half">
 					<div class="bride">
-						<img src="images/bride.jpg" alt="groom" class="img-responsive">
+						<img src="images/woman_potrait.jpg" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-bride">
-						<h3>Sheila Mahusay</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+						<h3>Htet Su Wai Ma</h3>
+						<p>Wife</p>
 					</div>
 				</div>
 			</div>
@@ -163,29 +166,33 @@
 					<!-- <form action="#"> -->
 					<form name="submit-to-google-sheet">
 						<div class="row form-group">
-							<div class="col-md-6">
+							<div class="col-md-12">
+								<label for="fname">Name</label>
+								<input type="text" name="name" id="name" class="form-control" placeholder="Your name">
+							</div>
+							<!-- <div class="col-md-6">
 								<label for="fname">First Name</label>
-								<input type="text" id="fname" class="form-control" placeholder="Your firstname">
+								<input type="text" id="first_name" class="form-control" placeholder="Your firstname">
 							</div>
 							<div class="col-md-6">
 								<label for="lname">Last Name</label>
-								<input type="text" id="lname" class="form-control" placeholder="Your lastname">
-							</div>
+								<input type="text" id="last_name" class="form-control" placeholder="Your lastname">
+							</div> -->
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<label for="email">Email</label>
-								<input type="text" id="email" class="form-control" placeholder="Your email address">
+								<input type="text" name="email" id="email" class="form-control" placeholder="Your email address">
 							</div>
 						</div>
 
-						<div class="row form-group">
+						<!-- <div class="row form-group">
 							<div class="col-md-12">
 								<label for="subject">Subject</label>
-								<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
+								<input type="text" name="subject" id="subject" class="form-control" placeholder="Your subject of this message">
 							</div>
-						</div>
+						</div> -->
 
 						<div class="row form-group">
 							<div class="col-md-12">
@@ -194,7 +201,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<button type="submit" value="Send Message" class="btn btn-primary">
+							<button type="submit" value="Send Message" class="btn btn-primary">Submit</button>
 						</div>
 
 					</form>
@@ -217,10 +224,10 @@
 					<div class="fh5co-contact-info">
 						<h3>Contact Information</h3>
 						<ul>
-							<li class="address">198 West 21th Street, <br> Suite 721 New York NY 10016</li>
-							<li class="phone"><a href="tel://1234567920">+ 1235 2355 98</a></li>
-							<li class="email"><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-							<li class="url"><a href="http://gettemplates.co">gettemplates.co</a></li>
+							<li class="address">3685 Payne Ave, <br> San Jose, CA, 95117</li>
+							<li class="phone"><a href="tel://1234567920">+1 6507338723</a></li>
+							<li class="email"><a href="mailto:info@yoursite.com">drhjsheng@gmail.com</a></li>
+							<!-- <li class="url"><a href="http://gettemplates.co">gettemplates.co</a></li> -->
 						</ul>
 					</div>
 
@@ -230,8 +237,11 @@
 		</div>
 	</div>
 
-	<div id="map" class="fh5co-map"></div>
+	<!-- <div id="map" class="fh5co-map"></div> -->
 		<!-- END map -->
+	<div class="container">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.735869468987!2d-121.96847378391953!3d37.301393347024245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcacbdb12d287%3A0xdf3cbdf47bf84a9d!2s3685%20Payne%20Ave%2C%20San%20Jose%2C%20CA%2095117!5e0!3m2!1sen!2sus!4v1647930730378!5m2!1sen!2sus" width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+	</div>
 
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
@@ -280,11 +290,34 @@
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
 	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="js/google_map.js"></script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<script src="js/google_map.js"></script> -->
 
+	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
+	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+
+	<script>
+		// set the target date for simplyCountdown
+		// var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000)
+		var d = new Date('2022-10-01T12:00:00');
+
+		// default example
+		simplyCountdown('.simply-countdown-one', {
+			year: d.getFullYear(),
+			month: d.getMonth() + 1,
+			day: d.getDate()
+		});
+
+		//jQuery example
+		$('#simply-countdown-losange').simplyCountdown({
+			year: d.getFullYear(),
+			month: d.getMonth() + 1,
+			day: d.getDate(),
+			enableUtc: false
+		});
+	</script>
 
 	</body>
 </html>
