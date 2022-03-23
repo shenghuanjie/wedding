@@ -585,13 +585,13 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-box mb-30">
-                                        <input type="text" name="name" placeholder="Name">
+                                        <input type="text" name="name" placeholder="Name" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-box subject-icon mb-30">
                                         <!-- <input type="Email" name="subject" placeholder="Email"> -->
-                                        <input type="Email" name="email" placeholder="Email">
+                                        <input type="Email" name="email" placeholder="Email" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 mb-30">
@@ -611,25 +611,41 @@
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-box message-icon mb-30">
-                                        <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                                        <textarea name="message" id="message" placeholder="List names of all guests" required></textarea>
                                     </div>
                                 <div class="submit-info">
                                     <button class="btn" type="submit">Confirm now</button>
                                 </div>
+								<div class="col-lg-6">
+									<p class="invisible" name="submission-status" id="submission-status">Confirmed!</button>
+								</div>
                                 </div>
                             </div>
                         </form>
 
 						<script>
-						  const scriptURL = 'https://script.google.com/macros/s/AKfycbwwp6sl6UHHNcKAow7T3AZNTUprB7py_L7zedi_iXxTML_5eTQayRWKExBRHo4C-KTZ/exec'
-						  const form = document.forms['submit-to-google-sheet']
+						const scriptURL = 'https://script.google.com/macros/s/AKfycbwwp6sl6UHHNcKAow7T3AZNTUprB7py_L7zedi_iXxTML_5eTQayRWKExBRHo4C-KTZ/exec'
+						const formName = 'submit-to-google-sheet'
+						const form = document.forms[formName]
+						const submissionStatus = document.getElementById('submission-status');
+						const formFields = document.forms[formName].elements;
 
-						  form.addEventListener('submit', e => {
-						    e.preventDefault()
-						    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-						      .then(response => console.log('Success!', response))
-						      .catch(error => console.error('Error!', error.message))
-						  })
+						function confirmedFunction(number) {
+							submissionStatus.innerText = "Confirmed!"
+						    submissionStatus.style.visibility = "hidden";
+						}
+						for (const element of formFields) {
+							element.addEventListener("click", confirmedFunction);
+						}
+
+						form.addEventListener('submit', e => {
+							e.preventDefault()
+							fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+								.then(response => {console.log('Success!', response); submissionStatus.innerText = "Confirmed!"; submissionStatus.style.visibility = "visible";})
+								.catch(error => {console.error('Error!', error.message); submissionStatus.innerText = "Failed! Please try again!"; submissionStatus.style.visibility = "visible";});
+
+						    // location.href = "confirmation.html";
+						})
 						</script>
 
                         <!-- Shape inner Flower -->
@@ -654,8 +670,10 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
+						<!-- <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
+						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small> -->
 						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+						<small class="block">Designed by FREEHTML5.co </small>
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
