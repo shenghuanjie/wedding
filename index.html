@@ -623,7 +623,7 @@
                             </div>
                         </form>
 
-						<script>
+						<!-- <script>
 						const scriptURL = 'https://script.google.com/macros/s/AKfycbwwp6sl6UHHNcKAow7T3AZNTUprB7py_L7zedi_iXxTML_5eTQayRWKExBRHo4C-KTZ/exec'
 						const formName = 'submit-to-google-sheet'
 						const form = document.forms[formName]
@@ -645,6 +645,19 @@
 								.catch(error => {console.error('Error!', error.message); submissionStatus.innerText = "Failed! Please try again!"; submissionStatus.style.visibility = "visible";});
 
 						    // location.href = "confirmation.html";
+						})
+						</script> -->
+
+						<script>
+						const scriptURL = 'https://script.google.com/macros/s/AKfycbwwp6sl6UHHNcKAow7T3AZNTUprB7py_L7zedi_iXxTML_5eTQayRWKExBRHo4C-KTZ/exec'
+						const formName = 'submit-to-google-sheet'
+						const form = document.forms[formName]
+
+						form.addEventListener('submit', e => {
+							e.preventDefault()
+							fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+								.then(response => {console.log('Success!', response); location.href = "confirmation.html";})
+								.catch(error => {console.error('Error!', error.message); location.href = "404.html";});
 						})
 						</script>
 
