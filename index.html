@@ -40,6 +40,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 
+	<!-- <link rel="stylesheet" href="css/music.css"> -->
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -60,7 +61,10 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/music.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -71,7 +75,7 @@
 
 	<div class="fh5co-loader"></div>
 
-	<div id="page">
+	<div id="page" onmousemove="playMusic()">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
 			<div class="row">
@@ -92,7 +96,7 @@
 							</ul>
 						</li> -->
 						<!-- <li><a href="gallery.html">Gallery</a></li> -->
-						<li><a href="#fh5co-gallery">Gallery</a></li>
+						<li><a href="#fh5co-gallery-container">Gallery</a></li>
 						<!-- <li class="has-dropdown">
 							<a href="gallery.html">Gallery</a>
 							<ul class="dropdown">
@@ -105,6 +109,25 @@
 						<!-- <li><a href="contact.html">Contact</a></li> -->
 						<li><a href="#fh5co-contact">Contact</a></li>
 					</ul>
+				</div>
+
+				<div data-v-ca3998a2="" data-v-2e498646="" class="music fixed">
+					<div data-v-ca3998a2="" class="tipWrap">
+						<span data-v-ca3998a2="" class="tip is-show">
+							Play
+						</span>
+					</div>
+
+					<audio id="background-music" loop autoplay>
+  						<source src="musics/song.mp3" type="audio/mp3">
+					</audio>
+
+					<!-- <iframe src="musics/5-seconds-of-silence.mp3" allow="autoplay" style="display: none" id="iframeAudio"></iframe>
+					<audio loop autoplay>
+  						<source src="musics/background.mp3" type="audio/mpeg">
+					</audio>
+					<img data-v-ca3998a2="" src="images/music/music_off.png" class="music-img music-close"></img> -->
+					<!-- <audio data-v-ca3998a2="" src="musics/background.mp3" loop autoplay class="audio" __idm_id__="638977"></audio> -->
 				</div>
 			</div>
 
@@ -272,7 +295,7 @@
 	</div> -->
 
 	<div id="fh5co-gallery" class="fh5co-section-gray">
-		<div class="container">
+		<div id="fh5co-gallery-container" class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 					<span>Our Memories</span>
@@ -752,6 +775,41 @@
 	        day: d.getDate(),
 	        enableUtc: false
 	    });
+
+		var autoScroll = function(){
+			window.scrollTo(0, document.body.scrollHeight, {
+			  behavior: 'smooth'
+			});
+		};
+
+		$(document).ready(function(){
+			autoScroll();
+		});
+
+		window.load = autoScroll;
+
+	</script>
+
+	<script>
+		var vAudio = document.getElementById("background-music");
+		var hasInit = false;
+		function playMusic()
+		{
+			if(!hasInit){
+				if (vAudio == null){
+					vAudio = document.getElementById("background-music");
+				}
+				if(vAudio != null)
+				{
+					vAudio.muted = true;
+	 			    vAudio.play();
+   			  	    hasInit = true;
+				}else{
+					console.log("vAudio cannot be found.")
+				}
+			}
+
+		}
 	</script>
 
 	</body>
