@@ -878,16 +878,21 @@
 	    });
 
 		var autoScroll = function(){
-			window.scrollTo(0, document.body.scrollHeight, {
-			  behavior: 'smooth'
-			});
+			// window.scrollTo({
+			// 	  top: document.body.scrollHeight,
+			// 	  left: 0,
+			//     behavior: 'smooth'
+			// });
+			var bottom = document.body.scrollHeight;
+	    $('html,body').animate({scrollTop: bottom}, 10000);
+	    //window.scrollTo(0, difHigh);
 		};
 
-		$(document).ready(function(){
-			autoScroll();
-		});
+		// $(document).ready(function(){
+		// 	autoScroll();
+		// });
 
-		window.load = autoScroll;
+		// window.load = autoScroll;
 
 	</script>
 
