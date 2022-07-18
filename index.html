@@ -78,7 +78,7 @@
 	<div class="fh5co-loader"></div>
 
 	<div class="music-icon" style="display: inline-block">
-		<img id="background-music-icon" src="images/music/music_off.png" style="display: inline-block" onclick="musicPlay()">
+		<img id="background-music-icon" src="images/music/music_off.png" style="display: inline-block" onclick="musicPlay2(this)">
 		<audio id="background-music" preload="" src="musics/background.mp3" loop="loop" style="display: inline-block"></audio>
 	</div>
 	<!-- <div id="page" onmousemove="playMusic()"> -->
@@ -950,6 +950,25 @@
 				}
 			}
 			// document.getElementById('background-music-icon').addEventListener('click', musicPlay);
+
+
+
+      var backgroundAudio = new Audio('musics/background.mp3');
+			function musicPlay2(element) {
+				backgroundAudio.volume = 0.2;
+				// console.log(img_obj.src);
+				// console.log(music_obj);
+				if (element.src.includes("on")){
+					 // console.log("pasue audio");
+					 element.src = element.src.replace("_on", "_off");
+					 backgroundAudio.pause();
+				}else{
+					// console.log("play audio");
+					 element.src = element.src.replace("_off", "_on");
+					 backgroundAudio.play();
+				}
+			}
+
 	</script>
 
 	</body>
