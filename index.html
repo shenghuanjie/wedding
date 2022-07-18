@@ -78,7 +78,7 @@
 	<div class="fh5co-loader"></div>
 
 	<div class="music-icon" style="display: inline-block">
-		<img id="background-music-icon" src="images/music/music_off.png" style="display: inline-block">
+		<img id="background-music-icon" src="images/music/music_off.png" style="display: inline-block" onclick="musicPlay()">
 		<audio id="background-music" src="musics/background.mp3" loop="loop" style="display: inline-block"></audio>
 	</div>
 	<!-- <div id="page" onmousemove="playMusic()"> -->
@@ -949,7 +949,7 @@
 					 music_obj.play();
 				}
 			}
-			document.getElementById('background-music-icon').addEventListener('click', musicPlay);
+			// document.getElementById('background-music-icon').addEventListener('click', musicPlay);
 	</script>
 
 	</body>
