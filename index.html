@@ -79,7 +79,9 @@
 
 	<div class="music-icon" style="display: inline-block">
 		<img id="background-music-icon" src="images/music/music_off.png" style="display: inline-block" onclick="musicPlay2(this)">
-		<audio id="background-music" preload="" src="musics/background.mp3" loop="loop" style="display: inline-block"></audio>
+		<audio id="background-music" style="display: inline-block" loop>
+					<source src="musics/background.mp3" type="audio/mp3">
+		</audio>
 	</div>
 	<!-- <div id="page" onmousemove="playMusic()"> -->
 	<div id="page">
@@ -118,26 +120,19 @@
 					</ul>
 				</div>
 
-				<div data-v-ca3998a2="" data-v-2e498646="" class="music fixed">
-					<!-- <div data-v-ca3998a2="" class="tipWrap">
+				<!-- <div data-v-ca3998a2="" data-v-2e498646="" class="music fixed">
+					<div data-v-ca3998a2="" class="tipWrap">
 						<span data-v-ca3998a2="" class="tip is-show">
 							Play
 						</span>
-					</div> -->
+					</div>
 
 					<audio id="background-music" loop autoplay>
   						<source src="musics/song.mp3" type="audio/mp3">
 					</audio>
-					<!-- <iframe src="musics/song.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> -->
+					<iframe src="musics/song.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
 
-
-					<!-- <iframe src="musics/5-seconds-of-silence.mp3" allow="autoplay" style="display: none" id="iframeAudio"></iframe>
-					<audio loop autoplay>
-  						<source src="musics/background.mp3" type="audio/mpeg">
-					</audio>
-					<img data-v-ca3998a2="" src="images/music/music_off.png" class="music-img music-close"></img> -->
-					<!-- <audio data-v-ca3998a2="" src="musics/background.mp3" loop autoplay class="audio" __idm_id__="638977"></audio> -->
-				</div>
+				</div> -->
 			</div>
 
 		</div>
@@ -956,9 +951,9 @@
       var backgroundAudio = new Audio('musics/background.mp3');
 			function musicPlay2(element) {
 				console.log("musicPlay2");
-				console.log("backgroundAudio" + backgroundAudio);
-				console.log("element" + element);
-				console.log("element.src" + element.src);
+				console.log("backgroundAudio " + backgroundAudio);
+				console.log("element " + element);
+				console.log("element.src " + element.src);
 				backgroundAudio.volume = 0.2;
 				// console.log(img_obj.src);
 				// console.log(music_obj);
@@ -966,10 +961,12 @@
 					 // console.log("pasue audio");
 					 element.src = element.src.replace("_on", "_off");
 					 backgroundAudio.pause();
+	 				 console.log("turned off element.src " + element.src);
 				}else{
 					// console.log("play audio");
 					 element.src = element.src.replace("_off", "_on");
 					 backgroundAudio.play();
+	 				 console.log("turned on: element.src " + element.src);
 				}
 			}
 
