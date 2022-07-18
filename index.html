@@ -75,7 +75,8 @@
 
 	<div class="fh5co-loader"></div>
 
-	<div id="page" onmousemove="playMusic()">
+	<!-- <div id="page" onmousemove="playMusic()"> -->
+	<div id="page">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
 			<div class="row">
@@ -118,9 +119,11 @@
 						</span>
 					</div> -->
 
-					<audio id="background-music" loop autoplay>
+					<!-- <audio id="background-music" loop autoplay>
   						<source src="musics/song.mp3" type="audio/mp3">
-					</audio>
+					</audio> -->
+					<!-- <iframe src="musics/song.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe> -->
+
 
 					<!-- <iframe src="musics/5-seconds-of-silence.mp3" allow="autoplay" style="display: none" id="iframeAudio"></iframe>
 					<audio loop autoplay>
@@ -146,6 +149,8 @@
 							<div class="simply-countdown simply-countdown-one"></div>
 							<!-- <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=MWkzcmk0OHBnNWEyNG0xbjJsZjI3cDRybjkgZHJoc2hlbmdAbQ&amp;tmsrc=drhsheng%40gmail.com"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a> -->
 							<p><a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=MWkzcmk0OHBnNWEyNG0xbjJsZjI3cDRybjkgZHJoc2hlbmdAbQ&amp;tmsrc=drhsheng%40gmail.com" class="btn btn-default btn-sm">Save the date</a></p>
+							<h3 style="color:white">Are you joining?</h3>
+							<h4 style="color:white">Let us know before August 13, 2022</h4>
 						</div>
 					</div>
 				</div>
@@ -700,6 +705,7 @@
                                 <div class="col-lg-12">
                                     <div class="section-tittle tittle-form text-center mb-30">
                                         <h2>Are you attending?</h2>
+                                        <h4>Please respond by August 13, 2022</h4>
                                         <img src="images/gallery/tittle_img2.png" alt="">
                                     </div>
                                 </div>
@@ -896,7 +902,7 @@
 
 	</script>
 
-	<script>
+	<!-- <script>
 		var vAudio = document.getElementById("background-music");
 		var hasInit = false;
 		function playMusic()
@@ -916,7 +922,7 @@
 			}
 
 		}
-	</script>
+	</script> -->
 
 	</body>
 </html>
